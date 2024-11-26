@@ -1,0 +1,9 @@
+---------------Paleta de Colores---------------
+
+- Negro --> 171717
+- Blanco --> F4EFFA
+- Morado Fuerte --> 532B88
+- Morado --> 532B88
+- Morado Claro --> 9B72CF
+- Lavanda --> C8B1E4
+-----------------------------------------------
