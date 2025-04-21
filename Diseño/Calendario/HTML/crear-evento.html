@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Evento</title>
+    <link rel="stylesheet" href="../CSS/crear-evento.css">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1 id="tituloFormulario">Registrar Evento</h1>
+
+        <form id="formEvento">
+            <input type="hidden" id="eventoId">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <input type="date" id="fecha" required>
+            <input type="time" id="hora" required>
+
+            <textarea id="descripcion" placeholder="Descripción" required></textarea>
+
+        <div class="botones-extra">
+            <button type="button">Añadir método de estudio</button>
+            <button type="button">Añadir sonido</button>
+        </div>
+
+        <button type="submit" class="btn-guardar">Guardar Evento</button>
+    </form>
+
+    </div>
+
+    <script src="../JS/crear-evento.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+body {
+  background: #211d1d;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.contenedor {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.lista-eventos {
+  margin: 20px 0;
+}
+
+.evento {
+  background: #eaeaea;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.evento h3 {
+  margin: 0 0 5px;
+}
+
+.evento button {
+  margin-right: 10px;
+}
+
+.btn-agregar {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 10px;
+}
