@@ -3,6 +3,13 @@
   src: url(../fonts/Inter/static/Inter_28pt-Regular.ttf);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background: black;
@@ -11,6 +18,11 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+}
+
+.sidebar-toggle-btn img {
+  width: 24px;
+  height: 24px;
 }
 
 .btn-atras {

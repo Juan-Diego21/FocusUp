@@ -1,89 +1,86 @@
 let contadorBoton = 1;
 
 function mostrarTexto() {
+  // Elementos del primer paso
   const segundoTexto = document.getElementById("segundoTexto");
   const TercerTexto = document.getElementById("TercerTexto");
-  const minutos = document.getElementById("minutos");
-  const pare = document.getElementById("pare");
-  const repetir = document.getElementById("repetir");
-  const cuartoTexto = document.getElementById("cuartoTexto");
+  const contenedorTimer25 = document.getElementById("contenedor-timer-25");
 
-  // Tercer parrafo 
+  // Elementos del segundo paso
+  const tercerTextoTextoDos = document.getElementById("tercerTextoTextoDos");
+  const parafoTextoDos = document.getElementById("parafoTextoDos");
+  const contenedorTimer5 = document.getElementById("contenedor-timer-5");
 
-   const tercerTextoTextoDos = document.getElementById("tercerTextoTextoDos");
-   const parafoTextoDos = document.getElementById("parafoTextoDos");
-   const minutosDos = document.getElementById("minutosDos");
-   const paraDos = document.getElementById("pareDos");
-   const repetirDos = document.getElementById("repetirDos");
+  // Botón final
+  const Botonterminado = document.getElementById("Botonterminado");
 
-  //Botno final
-   var Botonterminado = document.getElementById("Botonterminado");
+  // Elemento de la línea
+  const linea = document.querySelector('.linea');
+
+  // Función para mostrar elementos con transición
+  function mostrarElemento(elemento) {
+    // Primero hacemos visible el elemento pero con opacidad 0
+    elemento.style.display = 'block';
+    // Forzamos un reflow para que la transición funcione
+    elemento.offsetHeight;
+    // Removemos la clase oculto para iniciar la transición
+    elemento.classList.remove("oculto");
+  }
+
   if (contadorBoton === 1) {
-    // Mostrar los primeros textos y temporizador
-    segundoTexto.classList.remove("oculto");
-    segundoTexto.classList.add("visible");
-
-    TercerTexto.classList.remove("oculto");
-    TercerTexto.classList.add("visible");
-
-    minutos.classList.remove("oculto");
-    minutos.classList.add("visible");
-
-    pare.classList.remove("oculto");
-    pare.classList.add("visible");
-
-    repetir.classList.remove("oculto");
-    repetir.classList.add("visible");
-
-    cuartoTexto.classList.remove("oculto");
-    cuartoTexto.classList.add("visible")
-
+    // Mostrar primer paso con el temporizador de 25 minutos
+    mostrarElemento(segundoTexto);
+    setTimeout(() => mostrarElemento(TercerTexto), 200);
+    setTimeout(() => mostrarElemento(contenedorTimer25), 400);
+    
+    // Iniciar el temporizador de 25 minutos
+    window.timer25.reset();
+    window.timer25.start();
+    // Animar la línea hasta el segundo punto
+    linea.className = 'linea paso-2';
+    contadorBoton = 2;
   } 
   else if (contadorBoton === 2) {
-    // Ocultamos la clasede tiempo
-    minutos.classList.add("oculto");
-    minutos.classList.remove("visible");
-
-    pare.classList.add("oculto");
-    pare.classList.remove("visible");
-
-    repetir.classList.add("oculto");
-    repetir.classList.remove("visible");
-
-    cuartoTexto.classList.add("oculto");
-    cuartoTexto.classList.remove("visible");
-
-    // Por si no los muestra usar este codigo 
+    // Detener el temporizador de 25 minutos si aún está corriendo
+    window.timer25.stop();
     
-    //segundoTexto.classList.add("visible");
-    //segundoTexto.classList.remove("oculto");
-""
-    //TercerTex"""""""
-    // "t"''"o.classList.add("visible");
-    //TercerTexto.classList.remove("oculto");
-
-    tercerTextoTextoDos.classList.remove("oculto");
-    tercerTextoTextoDos.classList.add("visible");
+    // Mostrar segundo paso con el temporizador de 5 minutos
+    mostrarElemento(tercerTextoTextoDos);
+    setTimeout(() => mostrarElemento(parafoTextoDos), 200);
+    setTimeout(() => mostrarElemento(contenedorTimer5), 400);
     
-    parafoTextoDos.classList.remove("ocuto");
-    parafoTextoDos.classList.add("visible");
-    
-
-    // Botones
-    minutosDos.classList.remove("oculto");
-    minutosDos.classList.add("visible");
-   
-    paraDos.classList.remove("oculto");
-    paraDos.classList.add("visible");
-    
-    repetirDos.classList.remove("oculto");
-    repetirDos.classList.add("visible");
-    
-
-  }else if( contadorBoton===3){
-    Botonterminado.classList.remove("oculto");
-    Botonterminado.classList.add("visible");
-    }
-
-  contadorBoton++;
+    // Iniciar el temporizador de 5 minutos
+    window.timer5.reset();
+    window.timer5.start();
+    // Animar la línea hasta el tercer punto
+    linea.className = 'linea paso-3';
+    contadorBoton = 3;
+  }
+  else if (contadorBoton === 3) {
+    // Detener el temporizador de 5 minutos si aún está corriendo
+    window.timer5.stop();
+    // Mostrar botón de terminar con transición
+    mostrarElemento(Botonterminado);
+    // Reiniciar la línea para el próximo ciclo
+    linea.className = 'linea paso-1';
+    contadorBoton = 1;
+  }
 }
+
+// Agregar manejadores de eventos para los botones de reinicio
+document.addEventListener('DOMContentLoaded', () => {
+  const resetButton25 = document.querySelector('#minutos').nextElementSibling;
+  const resetButton5 = document.querySelector('#minutosDos').nextElementSibling;
+  const linea = document.querySelector('.linea');
+
+  // Inicializar la línea en su estado inicial
+  linea.className = 'linea paso-1';
+
+  resetButton25.addEventListener('click', () => {
+    window.timer25.reset();
+  });
+
+  resetButton5.addEventListener('click', () => {
+    window.timer5.reset();
+  });
+});

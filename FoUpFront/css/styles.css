@@ -1,3 +1,6 @@
+@import 'variables.css';
+@import 'base.css';
+
 @font-face {
   font-family: "Inter", sans-serif;
   src: url(../fonts/Inter/static/Inter_28pt-Regular.ttf);
@@ -21,19 +24,18 @@ body {
 
 /* Estilos para la barra lateral */
 .sidebar {
-  width: 280px;
-  background-color: #0f0f0f; /* Fondo barra lateral */
-  color: white;
-  padding: 20px;
+  width: var(--sidebar-width);
+  background-color: var(--bg-surface);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #2d2d2d;
-  transition: width 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+  box-shadow: var(--shadow-sm);
+  border-right: 1px solid var(--bg-surface-3);
+  transition: width var(--transition-normal), opacity var(--transition-normal);
   overflow: hidden;
 }
 
@@ -41,61 +43,65 @@ body {
 .user-profile {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #2d2d2d;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--bg-surface-3);
+  margin-bottom: var(--spacing-lg);
 }
 
 /* Foto de usuario */
 .user-photo {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: var(--border-radius-circle);
   object-fit: cover;
-  margin-right: 15px;
-  border: 2px solid #0690cf; /* Borde azul */
+  border: 2px solid var(--color-primary);
 }
 
 /* Detalles del usuario */
 .user-details {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 /* Nombre de usuario */
 .username {
-  font-size: 16px;
-  margin-bottom: 3px;
+  font-size: var(--font-size-md);
   font-weight: 500;
 }
 
 /* ID de usuario */
 .user-id {
-  font-size: 12px;
-  color: #a0a0a0;
-  letter-spacing: 1px;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
 }
 
 /* Menú de configuración */
 .settings-menu ul {
   list-style: none;
-  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
 /* Elementos del menú */
 .settings-menu li {
-  padding: 12px 0;
-  border-bottom: 1px solid #2a2a2a;
+  padding: var(--spacing-sm) 0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  position: relative;
 }
 
 /* Efecto hover en elementos del menú */
 .settings-menu li:hover {
-  color: #0690cf;
-  padding-left: 5px;
+  color: var(--color-primary);
+  padding-left: var(--spacing-sm);
 }
 
 /* Iconos en el menú */
@@ -132,21 +138,25 @@ body {
 
 /* Contenido principal */
 .main-content {
-  margin-left: 280px;
-  width: calc(100% - 280px);
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
   min-height: 100vh;
   background-color: #171717;
   color: white;
-  transition: margin-left 0.3s ease, width 0.3s ease; /* Transiciones suaves */
+  transition: margin-left var(--transition-normal), width var(--transition-normal);
 }
 
 /* Contenedor superior */
 .top-container {
-  background-color: #1a1a1a;
-  padding-bottom: 30px;
+  background-color: var(--bg-surface);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--bg-surface-3);
+  min-height: 250px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #2a2a2a;
+  gap: 15px;
 }
 
 /* Estilo para párrafos */
@@ -156,7 +166,9 @@ p {
 
 /* Estilo para el id "avance" */
 #avance {
-  margin-top: 20px;
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: 10px;
 }
 
 /* Contenedor de progreso */
@@ -164,98 +176,140 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 21px;
   width: 100%;
   max-width: 400px;
+  padding: 0;
+  margin: 0 auto;
 }
 
 /* Círculo de progreso */
 .progress-circle {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 350px;
+  height: 0px;
+  margin: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* SVG circular */
-.circular-chart {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* Fondo del círculo */
-.circle-bg {
+.progress-ring__circle-bg {
+  position: absolute;
   fill: none;
-  stroke: #2d2d2d;
-  stroke-width: 4;
+  stroke: var(--bg-surface-3);
+  stroke-width: 15;
+  width: 350px;
+  height: 350px;
 }
 
-/* Progreso del círculo */
-.circle-progress {
+.progress-ring__circle {
+  position: absolute;
   fill: none;
-  stroke: #0690cf;
-  stroke-width: 4;
+  stroke: var(--color-primary);
+  stroke-width: 0;
   stroke-linecap: round;
-  transition: stroke-dasharray 0.5s ease;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  width: 350px;
+  height: 350px;
 }
 
-/* Texto dentro del círculo */
 .progress-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: white;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  z-index: 1;
 }
 
 /* Botón para iniciar sesión de concentración */
 .concentration-btn {
-  white-space: nowrap;
-  background-color: #0690cf;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: var(--color-primary);
+  color: var(--text-primary);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   width: 100%;
   max-width: 300px;
   text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
 }
 
-/* Efecto hover en botón de concentración */
 .concentration-btn:hover {
-  background-color: #013c74;
+  background-color: var(--color-primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-md);
 }
 
 /* Contenido inferior con grid */
 .bottom-content {
-  padding: 30px;
+  padding: var(--spacing-sm);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: var(--spacing-sm);
+  max-width: var(--content-max-width);
+  margin: var(--spacing-sm) auto;
 }
 
 /* Contenedores de sesiones */
 .sessions-container {
-  background-color: #0f0f0f;
-  border-radius: 10px;
-  padding: 30px;
+  background-color: var(--bg-surface);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm);
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  height: 250px;
+  justify-content: space-between;
+  min-height: 180px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-/* Ajuste para el segundo contenedor */
-.sessions-container:nth-of-type(2) {
-  gap: 90px;
+.sessions-container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Mensajes de sesiones */
+.sessions-message {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Botones de programación */
+.schedule-btn,
+.sound-btn,
+.metod-btn {
+  background-color: var(--color-secondary);
+  color: var(--text-primary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  width: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-btn:hover,
+.sound-btn:hover,
+.metod-btn:hover {
+  background-color: var(--color-secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Responsive para pantallas medianas */
@@ -267,90 +321,13 @@ p {
 
 /* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
-  .bottom-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Mensajes de sesiones */
-.sessions-message {
-  font-size: 18px;
-  color: #a0a0a0;
-  text-align: center;
-  line-height: 1.5;
-}
-
-/* Botones de programación */
-.schedule-btn {
-  background-color: #ffa200;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  text-align: center;
-}
-
-.sound-btn {
-  background-color: #ffa200;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  text-align: center;
-}
-
-.metod-btn {
-  background-color: #ffa200;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  text-align: center;
-  margin-top: 0px;
-}
-
-/* Efecto hover en botones de programación */
-.schedule-btn:hover {
-  background-color: #a16600;
-  transform: translateY(-2px);
-}
-
-.sound-btn:hover {
-  background-color: #a16600;
-  transform: translateY(-2px);
-}
-
-.metod-btn:hover {
-  background-color: #a16600;
-  transform: translateY(-2px);
-}
-
-/* Responsive para pantallas pequeñas */
-@media (max-width: 768px) {
   .sidebar {
-    width: 70px;
-    padding: 15px 10px;
-    overflow: hidden;
+    width: var(--sidebar-width-collapsed);
+    padding: var(--spacing-md) var(--spacing-sm);
   }
 
   .user-details,
-  .settings-menu li span,
-  .logout-btn span {
+  .settings-menu li span {
     display: none;
   }
 
@@ -359,8 +336,13 @@ p {
   }
 
   .main-content {
-    margin-left: 70px;
-    width: calc(100% - 70px);
+    margin-left: var(--sidebar-width-collapsed);
+    width: calc(100% - var(--sidebar-width-collapsed));
+  }
+
+  .bottom-content {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-md);
   }
 }
 
@@ -380,14 +362,14 @@ p {
 /* Estilo para el botón de despliegue de la barra lateral */
 .sidebar-toggle-btn {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  padding: var(--spacing-xs);
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
+  background: var(--bg-surface);
+  border-radius: var(--border-radius-circle);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Imagen dentro del botón de despliegue */
@@ -396,10 +378,172 @@ p {
   height: 24px;
 }
 
-/* Cuando la barra lateral está expandida, mover el botón dentro de la barra lateral en la esquina superior derecha */
-.sidebar-expanded .sidebar-toggle-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  left: auto;
+.sidebar-toggle-btn:hover {
+  background: var(--bg-surface-2);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+/* Estilos para la notificación */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1E1E1E;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.notification button {
+    background-color: #0690cf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.notification button:hover {
+    background-color: #057db3;
+}
+
+/* Botón de despliegue */
+.dropdown-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.dropdown-btn.active {
+    transform: rotate(270deg);
+}
+
+/* Menú desplegable */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    padding: var(--spacing-xs) 0;
+    margin-top: 0;
+    z-index: 10;
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: #ff4444;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.submenu-item:hover {
+    opacity: 0.8;
+}
+
+.submenu-item img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Ajuste específico para el elemento de configuración de cuenta */
+.settings-menu li:has(.dropdown-btn) {
+    justify-content: space-between;
+}
+
+/* Modal de confirmación */
+.modal-confirm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-confirm.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #1E1E1E;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content p {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-cancel {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-confirm {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover,
+.btn-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }

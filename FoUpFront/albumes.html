@@ -1,56 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Álbumes</title>
     <link rel="stylesheet" href="css/albumes.css" />
-</head>
-<body>
+    <link rel="icon" href="img\Logo-marca.png" />
+  </head>
+  <body>
     <a href="index.html">
-        <img src="img/Back.png" alt="Volver atrás" class="btn-atras">
+      <img src="img/Back.png" alt="Volver atrás" class="btn-atras" />
     </a>
 
     <main class="albumes-container">
-        <h1>Álbumes</h1>
-        <section class="album-list">
-            <article class="album clickable-album">
-                <img src="img/fondo-album.png" alt="Calm" class="album-image" />
-                <h2 class="album-title">Calm</h2>
-                <p class="album-description">Descripción del álbum Calm. Música para concentración y estudio.</p>
-                <button class="concentration-btn btn-add-album">Añadir álbum a métodos de estudio</button>
-            </article>
-            <article class="album clickable-album">
-                <img src="img/fondo-album.png" alt="Álbum 2" class="album-image" />
-                <h2 class="album-title">Álbum 2</h2>
-                <p class="album-description">Descripción del álbum 2. Sonidos relajantes para sesiones de estudio.</p>
-                <button class="concentration-btn btn-add-album">Añadir álbum a métodos de estudio</button>
-            </article>
-            <article class="album clickable-album">
-                <img src="img/fondo-album.png" alt="Álbum 3" class="album-image" />
-                <h2 class="album-title">Álbum 3</h2>
-                <p class="album-description">Descripción del álbum 3. Música para mejorar la concentración.</p>
-                <button class="concentration-btn btn-add-album">Añadir álbum a métodos de estudio</button>
-            </article>
-        </section>
+      <h1>Álbumes</h1>
+      <section class="album-list">
+        <article class="album clickable-album">
+          <img src="img/fondo-album.png" alt="Calm" class="album-image" />
+          <h2 class="album-title">Calm</h2>
+          <p class="album-description">
+            Descripción del álbum Calm. Música para concentración y estudio.
+          </p>
+          <button class="concentration-btn btn-add-album">
+            Añadir álbum a métodos de estudio
+          </button>
+        </article>
+        <article class="album clickable-album">
+          <img src="img/fondo-album.png" alt="Álbum 2" class="album-image" />
+          <h2 class="album-title">Álbum 2</h2>
+          <p class="album-description">
+            Descripción del álbum 2. Sonidos relajantes para sesiones de
+            estudio.
+          </p>
+          <button class="concentration-btn btn-add-album">
+            Añadir álbum a métodos de estudio
+          </button>
+        </article>
+        <article class="album clickable-album">
+          <img src="img/fondo-album.png" alt="Álbum 3" class="album-image" />
+          <h2 class="album-title">Álbum 3</h2>
+          <p class="album-description">
+            Descripción del álbum 3. Música para mejorar la concentración.
+          </p>
+          <button class="concentration-btn btn-add-album">
+            Añadir álbum a métodos de estudio
+          </button>
+        </article>
+      </section>
     </main>
 
     <!-- Modal backdrop -->
     <div id="modal-backdrop" class="modal-backdrop hidden"></div>
 
     <!-- Modal -->
-    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal-content">
-            <h3 id="modal-title">Eventos guardados</h3>
-            <div id="event-list" class="event-list"></div>
-            <div id="no-events" class="no-events hidden">
-                <p>No tienes eventos de sesiones de concentración guardados.</p>
-                <button id="create-event-btn" class="concentration-btn btn-create-event">Crear evento</button>
-            </div>
-            <button id="close-modal" class="btn-close-modal" aria-label="Cerrar modal">&times;</button>
+    <div
+      id="modal"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-content">
+        <h3 id="modal-title">Eventos guardados</h3>
+        <div id="event-list" class="event-list"></div>
+        <div id="no-events" class="no-events hidden">
+          <p>No tienes eventos de sesiones de concentración guardados.</p>
+          <button
+            id="create-event-btn"
+            class="concentration-btn btn-create-event"
+          >
+            Crear evento
+          </button>
         </div>
+        <button
+          id="close-modal"
+          class="btn-close-modal"
+          aria-label="Cerrar modal"
+        >
+          &times;
+        </button>
+      </div>
     </div>
 
     <script src="Js/interacciones-mod.js"></script>
-</body>
+  </body>
 </html>

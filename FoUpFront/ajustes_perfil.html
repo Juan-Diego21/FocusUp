@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajustes de Perfil</title>
+    <link rel="icon" href="img/Logo-marca.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#171717] min-h-screen">
+    <!-- Botón para mostrar la barra lateral -->
+    <button
+      id="sidebarToggle"
+      class="fixed top-4 left-4 z-50 p-2 hover:bg-[#313131] rounded-full transition"
+    >
+      <img src="img/ui_menu.png" alt="Toggle Menu" class="w-6 h-6" />
+    </button>
+    <!-- Barra lateral -->
+    <aside
+      id="sidebar"
+      class="fixed top-0 left-0 h-full w-64 bg-[#171717] shadow-lg flex flex-col p-6 z-40 border-r-2 border-white transition-transform -translate-x-full"
+    >
+      <div class="flex flex-col items-center mb-8">
+        <img
+          src="img/user.png"
+          alt="Foto de usuario"
+          class="w-20 h-20 rounded-full mb-2"
+        />
+        <div class="text-center">
+          <h3 class="text-white text-lg font-semibold">Usuario</h3>
+          <p class="text-[#dbd6e0] text-sm">ID-789456</p>
+        </div>
+      </div>
+      <nav class="flex-1">
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="index.html"
+              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+            >
+              <i class="icon"></i> Inicio
+            </a>
+          </li>
+          <li>
+            <a
+              href="ajustes_perfil.html"
+              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+            >
+              <i class="icon"></i> Ajustes de perfil
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+            >
+              <i class="icon"></i> Preferencias
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+            >
+              <i class="icon"></i> Notificaciones
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+            >
+              <i class="icon"></i> Reportes
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a
+        href=""
+        class="mt-8 flex items-center gap-2 px-3 py-2 rounded bg-red-600 text-white hover:bg-red-700 transition"
+      >
+        <i class="icon"></i> Cerrar Sesión
+      </a>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main
+      id="mainContent"
+      class="flex justify-center items-center min-h-screen p-6 transition-all"
+    >
+      <div class="w-full max-w-md bg-[#232323] rounded-lg shadow-lg p-8 mx-2">
+        <h1 class="text-2xl font-bold text-[#F4EFFA] mb-8 text-center">
+          Ajustes de Perfil
+        </h1>
+        <form>
+          <!-- Nombre de Usuario -->
+          <div class="mb-5">
+            <label for="username" class="block text-[#F4EFFA] mb-2"
+              >Nombre de Usuario</label
+            >
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Tu nombre de usuario"
+              class="w-full p-2 rounded-md bg-gray-700 text-[#F4EFFA] border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              autocomplete="username"
+            />
+          </div>
+          <!-- Cambiar contraseña -->
+          <div class="mb-8">
+            <a
+              href="forgot.html"
+              class="inline-block py-2 px-4 rounded-md bg-blue-600 text-[#F4EFFA] font-bold hover:bg-blue-700 transition-colors duration-200"
+            >
+              Cambiar contraseña
+            </a>
+          </div>
+          <!-- Fecha de Nacimiento -->
+          <div class="mb-5">
+            <label for="birthdate" class="block text-[#F4EFFA] mb-2"
+              >Fecha de Nacimiento</label
+            >
+            <input
+              type="date"
+              id="birthdate"
+              name="birthdate"
+              class="w-full p-2 rounded-md bg-gray-700 text-[#F4EFFA] border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          <!-- Horario de Estudio más Habitual -->
+          <div class="mb-8">
+            <label for="study_time" class="block text-[#F4EFFA] mb-2"
+              >Horario de Estudio más Habitual</label
+            >
+            <input
+              type="time"
+              id="study_time"
+              name="study_time"
+              class="w-full p-2 rounded-md bg-gray-700 text-[#F4EFFA] border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <!-- Distracciones más comunes -->
+          <div class="mb-5">
+            <label class="block text-[#F4EFFA] mb-2">
+              ¿Cuáles consideras que son tus 2 distracciones más comunes?
+            </label>
+            <div class="relative w-full mb-4">
+              <select
+                name="distraccion1"
+                id="distraccion1"
+                class="w-full h-10 px-3 py-2 font-normal bg-gray-700 text-[#F4EFFA] rounded-md cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+              >
+                <option value="" disabled selected hidden class="text-gray-400">
+                  Selecciona una distracción
+                </option>
+                <option value="option1">Redes sociales</option>
+                <option value="option2">Mensajería instantánea</option>
+                <option value="option3">Notificaciones del teléfono</option>
+                <option value="option4">Correo electrónico</option>
+                <option value="option5">Plataformas de video</option>
+                <option value="option6">Juegos móviles o en línea</option>
+                <option value="option7">Scroll infinito</option>
+                <option value="option8">Compras online</option>
+                <option value="option9">Ruidos externos</option>
+                <option value="option10">
+                  Interrupciones de otras personas
+                </option>
+                <option value="option11">Hambre o sed</option>
+                <option value="option12">Falta de comodidad</option>
+                <option value="option13">
+                  Desorden en el espacio de trabajo
+                </option>
+                <option value="option14">Mascotas</option>
+                <option value="option15">Pensamientos intrusivos</option>
+                <option value="option16">Sueño/fatiga</option>
+                <option value="option17">Aburrimiento</option>
+                <option value="option18">Multitarea</option>
+                <option value="option19">Día soñando despierto</option>
+                <option value="option20">Estrés o ansiedad</option>
+              </select>
+              <div
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+              >
+                <img src="./img/Lista.png" alt="" class="w-5 h-5" />
+              </div>
+            </div>
+            <div class="relative w-full">
+              <select
+                name="distraccion2"
+                id="distraccion2"
+                class="w-full h-10 px-3 py-2 font-normal bg-gray-700 text-[#F4EFFA] rounded-md cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+              >
+                <option value="" disabled selected hidden class="text-gray-400">
+                  Selecciona una distracción
+                </option>
+                <option value="option1">Redes sociales</option>
+                <option value="option2">Mensajería instantánea</option>
+                <option value="option3">Notificaciones del teléfono</option>
+                <option value="option4">Correo electrónico</option>
+                <option value="option5">Plataformas de video</option>
+                <option value="option6">Juegos móviles o en línea</option>
+                <option value="option7">Scroll infinito</option>
+                <option value="option8">Compras online</option>
+                <option value="option9">Ruidos externos</option>
+                <option value="option10">
+                  Interrupciones de otras personas
+                </option>
+                <option value="option11">Hambre o sed</option>
+                <option value="option12">Falta de comodidad</option>
+                <option value="option13">
+                  Desorden en el espacio de trabajo
+                </option>
+                <option value="option14">Mascotas</option>
+                <option value="option15">Pensamientos intrusivos</option>
+                <option value="option16">Sueño/fatiga</option>
+                <option value="option17">Aburrimiento</option>
+                <option value="option18">Multitarea</option>
+                <option value="option19">Día soñando despierto</option>
+                <option value="option20">Estrés o ansiedad</option>
+              </select>
+              <div
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+              >
+                <img src="./img/Lista.png" alt="" class="w-5 h-5" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Objetivo principal -->
+          <div class="mb-8">
+            <label class="block text-[#F4EFFA] mb-2">
+              ¿Cuál es tu objetivo principal al utilizar Focus Up?
+            </label>
+            <div class="relative w-full">
+              <select
+                name="objetivo"
+                id="objetivo"
+                class="w-full h-10 px-3 py-2 font-normal bg-gray-700 text-[#F4EFFA] rounded-md cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+              >
+                <option value="" disabled selected hidden class="text-gray-400">
+                  Selecciona una opción
+                </option>
+                <option value="option1">Estudio y Aprendizaje</option>
+                <option value="option2">Trabajo y Productividad</option>
+                <option value="option3">
+                  Tareas Domésticas y Organización Personal
+                </option>
+                <option value="option4">
+                  Creatividad y Proyectos Personales
+                </option>
+                <option value="option5">Salud Mental y Bienestar</option>
+              </select>
+              <div
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+              >
+                <img src="./img/Lista.png" alt="" class="w-5 h-5" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Botones -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+             href="index.html"
+             class="w-full sm:w-auto py-2 px-4 rounded-md bg-blue-600 text-[#F4EFFA] font-bold text-center hover:bg-blue-700 transition-colors duration-200"
+            >
+            Guardar Cambios
+            <a
+              href="index.html"
+              class="w-full sm:w-auto py-2 px-4 rounded-md bg-gray-600 text-[#F4EFFA] font-bold text-center hover:bg-gray-700 transition-colors duration-200"
+            >
+              Cancelar
+            </a>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script>
+      // Sidebar toggle y centrado del main
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar");
+        const sidebarToggle = document.getElementById("sidebarToggle");
+        const mainContent = document.getElementById("mainContent");
+
+        if (sidebar && sidebarToggle && mainContent) {
+          sidebarToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("-translate-x-full");
+            sidebar.classList.toggle("translate-x-0");
+            if (sidebar.classList.contains("-translate-x-full")) {
+              mainContent.classList.add("justify-center", "items-center");
+              mainContent.classList.remove("ml-64");
+            } else {
+              mainContent.classList.remove("justify-center", "items-center");
+              mainContent.classList.add("ml-64");
+            }
+          });
+
+          // Estado inicial
+          if (sidebar.classList.contains("-translate-x-full")) {
+            mainContent.classList.add("justify-center", "items-center");
+            mainContent.classList.remove("ml-64");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
