@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca de Métodos de Estudio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Biblioteca.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/Logo-marca.png') }}">
+</head>
+<body>
+
+  <!-- Botón de volver atrás -->
+  <a href="{{ url_for('user_bp.profile') }}">
+    <img src="{{ url_for('static', filename='img/Back.png') }}" alt="Volver atrás" class="btn-atras">
+  </a>
+
+  <!-- Título principal -->
+  <div class="titulo">
+    <h1>Biblioteca de Métodos de Estudio</h1>
+  </div>
+
+  <br><br>
+
+  <!-- Contenedor de métodos -->
+  <div class="container">
+
+    <!-- 1. Método Pomodoro -->
+    <div class="cuadro">
+      <div class="icono">
+        <img src="{{ url_for('static', filename='img/Pomodoro.png') }}" alt="Método ">
+      </div>
+      <h2>1. Método Pomodoro</h2>
+      <img src="{{ url_for('static', filename='img/mas.png') }}"  class="btn-toggle-method" data-method="Método Pomodoro">
+      <a href="{{ url_for('biblioteca_bp.metodo_pomodoro')}}">Añadir método</a>
+      <p>
+        <strong>Técnica de gestión del tiempo.</strong> Divide el tiempo de estudio en intervalos de trabajo y descanso.
+        <strong> Beneficios:</strong> Mejora la productividad y la concentración.
+      </p>
+    </div>
+
+    <!-- 2. Mapas Mentales -->
+    <div class="cuadro">
+      <div class="icono">
+        <img src="{{ url_for('static', filename='img/Mentales.png') }}" alt="Mapas Mentales">
+      </div>
+      <h2>2. Mapas Mentales</h2>
+      <img src="{{ url_for('static', filename='img/mas.png') }}" alt="Añadir método" class="btn-toggle-method" data-method="Mapas Mentales">
+      <p>
+        <strong>Organiza visualmente las ideas.</strong> Crea mapas mentales para conectar ideas clave. Ideal para entender conceptos.
+        <strong> Beneficios:</strong> Facilita el aprendizaje significativo.
+      </p>
+    </div>
+
+    <!-- 3. Repaso Espaciado -->
+    <div class="cuadro">
+      <div class="icono">
+        <img src="{{ url_for('static', filename='img/RepasoEspaciado.png') }}" alt="Repaso Espaciado">
+      </div>
+      <h2>3. Repaso Espaciado</h2>
+      <img src="{{ url_for('static', filename='img/mas.png') }}" alt="Añadir método" class="btn-toggle-method" data-method="Repaso Espaciado">
+      <p>
+        <strong>Reforzamiento a largo plazo.</strong> Revisa la información en intervalos regulares en lugar de memorizar todo de una vez.
+        <strong> Beneficios:</strong> Mejora la retención a largo plazo.
+      </p>
+    </div>
+
+    <!-- 4. Práctica Activa -->
+    <div class="cuadro">
+      <div class="icono">
+        <img src="{{ url_for('static', filename='img/Practica.png') }}" alt="Práctica Activa">
+      </div>
+      <h2>4. Práctica Activa</h2>
+      <img src="{{ url_for('static', filename='img/mas.png') }}" alt="Añadir método" class="btn-toggle-method" data-method="Práctica Activa">
+      <p>
+        <strong>Aprende haciendo.</strong> Pon a prueba tu conocimiento respondiendo preguntas o resolviendo problemas.
+        <strong> Beneficios:</strong> Profundiza la comprensión y fortalece la memoria.
+      </p>
+    </div>
+
+    <!-- 5. Método Feynman -->
+    <div class="cuadro">
+      <div class="icono">
+        <img src="{{ url_for('static', filename='img/feiman.png') }}" alt="Método Feynman">
+      </div>
+      <h2>5. Método Feynman</h2>
+      <img src="{{ url_for('static', filename='img/mas.png') }}" alt="Añadir método" class="btn-toggle-method" data-method="Método Feynman">
+      <p>
+        <strong>Aprender explicando.</strong> Intenta explicar el tema como si se lo enseñaras a alguien más.
+        <strong> Beneficios:</strong> Identifica lagunas en tu comprensión y fortalece el aprendizaje.
+      </p>
+    </div>
+
+    <!-- 6. Método Cornell -->
+    <div class="cuadro">
+      <div class="icono">
+        <img src="{{ url_for('static', filename='img/notas-adhesivas.png') }}" alt="Método Cornell">
+      </div>
+      <h2>6. Método Cornell</h2>
+      <img src="{{ url_for('static', filename='img/mas.png') }}" alt="Añadir método" class="btn-toggle-method" data-method="Método Cornell">
+      <p>
+        <strong>Notas efectivas.</strong> Toma notas de manera estructurada. Facilita el repaso y la comprensión de los temas.
+        <strong> Beneficios:</strong> Mejora la organización y la claridad al estudiar.
+      </p>
+    </div>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='Js/interacciones-mod.js') }}"></script>
+</body>
+</html>

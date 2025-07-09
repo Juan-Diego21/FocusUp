@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusUp - Eventos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/evento.css') }}" />
+  </head>
+  <body>
+    <img
+      src="{{ url_for('static', filename='img/Back.png') }}"
+      alt="Volver"
+      class="btn-atras"
+    />
+
+    <div class="contenedor">
+      <h1>Eventos programados</h1>
+      <div class="lista-eventos" id="listaEventos"></div>
+      <a class="btn-agregar" href="{{ url_for('event_bp.event_create') }}">+ Añadir Evento</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='Js/eventos.js') }}"></script>
+  </body>
+</html>

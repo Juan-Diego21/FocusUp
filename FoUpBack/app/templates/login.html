@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Up - Inicio de Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_login.css') }}">
+</head>
+<body>
+    <!-- Contenedor principal del login centrado en la pantalla -->
+    <div class="login-container">
+        <div class="login-box">
+            <img src="{{ url_for('static', filename='img/Logo.png') }}" alt="Logo de Focus Up" class="logo">
+            
+       
+            <form method="post" action="{{ url_for('user_bp.login') }}" class="login-form" aria-label="Formulario de inicio de sesión">
+                <!-- Campo para correo electrónico -->
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Correo electrónico" 
+                           class="rounded-input" required id="email">
+                </div>
+                
+                <!-- Campo para contraseña -->
+                <div class="input-group">
+                    <input type="contraseña" name="contraseña" placeholder="contraseña" 
+                           class="rounded-input" required aria-required="true" 
+                           id="contraseña">
+                </div>
+                
+                <!-- Botón para enviar el formulario -->
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+                
+                <!-- Botón para continuar con Google -->
+                <button type="button" class="google-btn" aria-label="Continuar con Google">
+                    <img src="{{ url_for('static', filename='img/google.png') }}" alt="Logo de Google">
+                    Continuar con Google
+                </button>
+                
+                <!-- Enlaces para registrarse  -->
+                <div class="links">
+                    <a href="{{ url_for('user_bp.register') }}" class="register-link">Registrarse</a>
+                    <a href="forgot.html" class="text-white text-sm transition">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

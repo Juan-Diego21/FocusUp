@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encuesta - Focus Up</title>
+
+    <!-- CSS de Tailwind compilado -->
+    <link href="{{ url_for('static', filename='src/output.css') }}" rel="stylesheet" />
+
+    <!-- Ícono -->
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo-marca.png') }}" />
+
+    <!-- Configuración extendida de Tailwind -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-black min-h-screen flex items-center justify-center font-inter p-[20px]">
+    
+    <form method="POST" action="{{ url_for('user_bp.encuesta') }}" class="w-full max-w-md px-5">
+      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+        <!-- Logo -->
+        <img
+          src="{{ url_for('static', filename='img/Logo.png') }}"
+          alt="Logo de Focus Up"
+          class="w-72 mx-auto pb-0"
+        />
+
+        <!-- Pregunta 1 -->
+        <div class="my-5">
+          <h1 class="text-left font-medium text-white text-[17px] mb-2">
+            ¿Cuál consideras que son tus 3 distracciones más comunes?
+          </h1>
+
+          {% for i in range(3) %}
+          <div class="relative w-full mb-4">
+            <select
+              name="distraccion_{{ i }}"
+              class="w-full h-10 px-3 py-2 font-normal bg-white rounded-sm cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+              required
+            >
+              <option value="" disabled selected hidden class="text-gray-400">
+                Selecciona una distracción
+              </option>
+              <option value="Redes sociales">Redes sociales</option>
+              <option value="Mensajería instantánea">Mensajería instantánea</option>
+              <option value="Notificaciones del teléfono">Notificaciones del teléfono</option>
+              <option value="Correo electrónico">Correo electrónico</option>
+              <option value="Plataformas de video">Plataformas de video</option>
+              <option value="Juegos móviles o en línea">Juegos móviles o en línea</option>
+              <option value="Scroll infinito">Scroll infinito</option>
+              <option value="Compras online">Compras online</option>
+              <option value="Ruidos externos">Ruidos externos</option>
+              <option value="Interrupciones de otras personas">Interrupciones de otras personas</option>
+              <option value="Hambre o sed">Hambre o sed</option>
+              <option value="Falta de comodidad">Falta de comodidad</option>
+              <option value="Desorden en el espacio de trabajo">Desorden en el espacio de trabajo</option>
+              <option value="Mascotas">Mascotas</option>
+              <option value="Pensamientos intrusivos">Pensamientos intrusivos</option>
+              <option value="Sueño/fatiga">Sueño/fatiga</option>
+              <option value="Aburrimiento">Aburrimiento</option>
+              <option value="Multitarea">Multitarea</option>
+              <option value="Día soñando despierto">Día soñando despierto</option>
+              <option value="Estrés o ansiedad">Estrés o ansiedad</option>
+            </select>
+            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+              <img src="{{ url_for('static', filename='img/Lista.png') }}" alt="" class="w-5 h-5" />
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="my-5">
+          <h1 class="text-left font-medium text-white text-[17px] mb-2">
+            ¿Cuál es tu objetivo principal al utilizar Focus Up?
+          </h1>
+
+          <div class="relative w-full">
+            <select
+              name="objetivo"
+              class="w-full h-10 px-3 py-2 font-normal bg-white rounded-sm cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+              required
+            >
+              <option value="" disabled selected hidden class="text-gray-400">
+                Selecciona una opción
+              </option>
+              <option value="Estudio y Aprendizaje">Estudio y Aprendizaje</option>
+              <option value="Trabajo y Productividad">Trabajo y Productividad</option>
+              <option value="Tareas Domésticas y Organización Personal">Tareas Domésticas y Organización Personal</option>
+              <option value="Creatividad y Proyectos Personales">Creatividad y Proyectos Personales</option>
+              <option value="Salud Mental y Bienestar">Salud Mental y Bienestar</option>
+            </select>
+            <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+              <img src="{{ url_for('static', filename='img/Lista.png') }}" alt="" class="w-5 h-5" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón Finalizar -->
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition cursor-pointer"
+          id="Boton_Terminar"
+        >
+          Terminar
+        </button>
+      </div>
+    </form>
+
+    <!-- JS opcional -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Up</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo-marca.png') }}" />
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Botón para abrir menú -->
+    <button id="sidebarToggle" class="sidebar-toggle-btn">
+        <img src="{{ url_for('static', filename='img/ui_menu.png') }}" alt="Toggle Menu" />
+    </button>
+
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+        <div class="user-profile">
+            <img src="{{ url_for('static', filename='img/user.png') }}" alt="Foto de usuario" class="user-photo">
+            <div class="user-details">
+                <h3 class="username">Usuario</h3>
+                <p class="user-id">ID-789456</p>
+            </div>
+        </div>
+
+        <nav class="settings-menu">
+            <ul>
+                <li><i class="icon"></i> Inicio</li>
+                <li>
+                    <div style="display: flex; align-items: center;">
+                        <i class="icon"></i> Configuración de cuenta
+                    </div>
+                    <button class="dropdown-btn">
+                        <img src="{{ url_for('static', filename='img/Back.png') }}" alt="Desplegar">
+                    </button>
+                    <div class="submenu">
+                        <div class="submenu-item" id="eliminarCuenta">
+                            <img src="{{ url_for('static', filename='img/borrar.png') }}" alt="Eliminar">
+                            <span>Eliminar cuenta</span>
+                        </div>
+                    </div>
+                </li>
+                <li><i class="icon"></i> Preferencias</li>
+                <li><i class="icon"></i> Notificaciones</li>
+                <li >
+                    <i class="icon"></i> Reportes
+                </li>
+            </ul>
+        </nav>
+
+        <button class="logout-btn">
+            <i class="icon"></i> Cerrar Sesión
+        </button>
+    </aside>
+
+    <!-- Modal de confirmación -->
+    <div class="modal-confirm" id="modalConfirm">
+        <div class="modal-content">
+            <p>¿Estás seguro de que quieres eliminar tu cuenta y todos tus datos asociados a ella?</p>
+            <div class="modal-buttons">
+                <button class="btn-cancel" id="btnCancel">No</button>
+                <button class="btn-confirm" id="btnConfirm">Estoy seguro</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <div class="top-container">
+            <div class="progress-container">
+                <p id="avance">Avance del proceso</p>
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring__circle-bg" r="52" cx="60" cy="60" />
+                        <circle class="progress-ring__circle" r="52" cx="60" cy="60" />
+                    </svg>
+                    <div class="progress-text">0%</div>
+                </div>
+                <button class="concentration-btn">Empezar sesión de concentración</button>
+            </div>
+        </div>
+
+        <div class="bottom-content">
+            <div class="sessions-container">
+                <div class="sessions-message">No tienes sesiones de concentración programadas</div>
+                <a class="schedule-btn" href="{{ url_for('event_bp.eventos') }}">Programar sesión de concentración</a>
+            </div>
+            <div class="sessions-container">
+                <div class="sessions-message">No tienes sonidos guardados</div>
+                <a class="sound-btn" href="{{ url_for('sonidos_bp.sonidos') }}">Explorar sonidos</a>
+            </div>
+            <div class="sessions-container">
+                <div class="sessions-message">No tienes métodos de estudio guardados</div>
+                <a class="metod-btn" href="{{ url_for('biblioteca_bp.mostrar_biblioteca') }}">Explorar métodos de estudio</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts JS -->
+    <script src="{{ url_for('static', filename='Js/progress.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/notification.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/index.js') }}"></script>
+</body>
+</html>

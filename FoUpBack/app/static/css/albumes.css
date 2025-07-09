@@ -1,0 +1,213 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+html, body {
+    height: 100%;
+    background-color: #171717;
+    color: #F4EFFA;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.btn-atras {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.btn-atras:hover {
+    transform: scale(1.1);
+}
+
+.albumes-container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.album-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.album {
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.album-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #0690CF;
+}
+
+.album-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.album-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #F4EFFA;
+}
+
+.btn-add-album {
+    background-color: #0690CF;
+    color: #F4EFFA;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add-album:hover,
+.btn-add-album:focus {
+    background-color: #03588F;
+    outline: none;
+}
+
+/* Modal backdrop with blur effect */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(23, 23, 23, 0.7);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+}
+
+.modal-backdrop.hidden {
+    display: none;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #171717;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    z-index: 1001;
+    padding: 1.5rem;
+    color: #F4EFFA;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.event-list {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0.5rem;
+    border: 1px solid #03588F;
+    border-radius: 12px;
+    background-color: #222;
+    color: #F4EFFA;
+}
+
+.no-events {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.no-events p {
+    margin-bottom: 1rem;
+}
+
+.btn-create-event {
+    background-color: #0690CF;
+    color: #F4EFFA;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-create-event:hover,
+.btn-create-event:focus {
+    background-color: #03588F;
+    outline: none;
+}
+
+.btn-close-modal {
+    position: absolute;
+    top: 0rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #F4EFFA;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Clickable album card styles */
+.clickable-album {
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.clickable-album:hover {
+    background-color: #494949;
+}
+
+.clickable-album:active {
+    background-color: #333232;
+}

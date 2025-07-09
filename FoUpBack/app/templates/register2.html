@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - Focus Up</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo-marca.png') }}" />
+
+    <link href="{{ url_for('static', filename='src/output.css') }}" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#0690cf",
+              secundary: "#026b9b",
+              dark: "#171717",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-black min-h-screen flex items-center justify-center font-inter p-[20px]">
+    <img
+      src="{{ url_for('static', filename='img/Back.png') }}"
+      alt="Botón para volver atrás"
+      class="absolute mt-5 ml-5 w-6 h-6 top-2.5 left-2.5 cursor-pointer"
+      onclick="window.history.back();"
+    />
+
+    <div class="w-full max-w-md px-5">
+      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+        <!-- Logo -->
+        <img
+          src="{{ url_for('static', filename='img/Logo.png') }}"
+          alt="Logo de Focus Up"
+          class="w-72 mx-auto pb-0"
+        />
+
+        <h1 class="text-[20px] font-bold m-6 text-white pb-3">
+          ¡Para mejorar tu experiencia nos gustaría que nos ayudaras llenando la siguiente encuesta!
+        </h1>
+
+        <!-- Botones -->
+        <div class="flex justify-around">
+          <form method="POST" class="flex justify-center space-x-20">
+            <!-- Botón Continuar -->
+            <button
+              name="accion"
+              type="submit"
+              value="encuesta"
+              class="w-30 bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition cursor-pointer"
+              id="Boton_Continuar"
+            >
+              Continuar
+            </button>
+
+            <!-- Botón No gracias -->
+            <button
+              name="accion"
+              type="submit"
+              value="saltar"
+              class="w-30 bg-red-500 text-white py-3 rounded-lg font-medium hover:bg-red-600 transition cursor-pointer"
+              id="Boton_Terminar"
+            >
+              No gracias
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
