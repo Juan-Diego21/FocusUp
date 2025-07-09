@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Up - Nueva Contraseña</title>
+    <link href="src/output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/Logo-marca.png" />
+  </head>
+  <body
+    class="bg-black min-h-screen flex items-center justify-center p-5 font-sans"
+  >
+    <!-- Contenedor Principal -->
+    <div class="w-full max-w-md">
+      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+        <!-- Logo -->
+        <img
+          src="img/Logo.png"
+          alt="Logo de Focus Up"
+          class="w-72 mx-auto pb-10"
+        />
+
+        <!-- Formulario -->
+        <form class="space-y-5">
+          <!-- Instrucción -->
+          <p class="text-white text-center mb-5 text[20px] font-medium">
+            Escribe una nueva contraseña
+          </p>
+
+          <!-- Campo Contraseña Nueva -->
+          <div>
+            <input
+              type="password"
+              placeholder="Contraseña nueva"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900"
+              required
+            />
+          </div>
+
+          <!-- Campo Confirmar Contraseña -->
+          <div>
+            <input
+              type="password"
+              placeholder="Confirmar contraseña"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-900"
+              required
+            />
+          </div>
+
+          <!-- Botón Continuar -->
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            id="Boton_Terminar"
+          >
+            Continuar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Inclusión del archivo JavaScript -->
+    <script src="Js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Up - Verificación de Código</title>
+    <!-- Enlace a la hoja de estilos específica para la página de verificación -->
+    <link rel="stylesheet" href="css/forgot_2.css" />
+  </head>
+  <body>
+    <img
+      src="img/Back.png"
+      alt=""
+      class="btn-atras"
+      onclick="window.history.back();"
+    />
+
+    <!-- Contenedor principal centrado en la pantalla -->
+    <div class="login-container">
+      <div class="login-box">
+        <!-- Logo de la aplicación -->
+        <img src="img/Logo.png" alt="Logo de Focus Up" class="logo" />
+
+        <!-- Formulario para ingresar código de verificación -->
+        <form
+          class="login-form"
+          aria-label="Formulario de verificación de código"
+        >
+          <!-- Instrucción para el usuario -->
+          <p>
+            Hemos enviado un código de verificación a tu correo para poder
+            restablecer tu contraseña
+          </p>
+
+          <!-- Contenedor de inputs para el código de 5 dígitos -->
+          <div
+            class="code-container"
+            role="group"
+            aria-label="Código de verificación de 5 dígitos"
+          >
+            <!-- Cada input acepta un solo dígito numérico y auto-focaliza el siguiente al completar -->
+            <input
+              type="text"
+              maxlength="1"
+              pattern="[0-9]"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
+              class="code-input"
+              required
+              aria-label="Dígito 1"
+            />
+            <input
+              type="text"
+              maxlength="1"
+              pattern="[0-9]"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
+              class="code-input"
+              required
+              aria-label="Dígito 2"
+            />
+            <input
+              type="text"
+              maxlength="1"
+              pattern="[0-9]"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
+              class="code-input"
+              required
+              aria-label="Dígito 3"
+            />
+            <input
+              type="text"
+              maxlength="1"
+              pattern="[0-9]"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
+              class="code-input"
+              required
+              aria-label="Dígito 4"
+            />
+            <input
+              type="text"
+              maxlength="1"
+              pattern="[0-9]"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
+              class="code-input"
+              required
+              aria-label="Dígito 5"
+            />
+          </div>
+
+          <!-- Botón para enviar el formulario -->
+          <button type="submit" class="login-btn">Continuar</button>
+        </form>
+      </div>
+    </div>
+    <!-- Inclusión del archivo JavaScript para manejar interacciones -->
+    <script src="Js\script.js"></script>
+  </body>
+</html>

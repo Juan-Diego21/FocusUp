@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Pomodoro</title>
+    <link rel="stylesheet" href="css/sdc.css">
+    <link rel="stylesheet" href="css/player-bar-fix.css">
+</head>
+
+<body>
+    <img
+    src="img/Back.png"
+    alt=""
+    class="btn-atras"
+    onclick="window.location.href='index.html';"
+  />
+
+    <div class="partedearriba">
+        <div class="sesion">
+            <h1>Sesion de concentracion</h1>
+            <div class="progress-title">Método Pomodoro</div>
+            <div class="progress-circle">
+                <svg class="progress-ring" width="120px" height="120px">
+                    <circle class="progress-ring__circle-bg" r="52" cx="60" cy="60" />
+                    <circle class="progress-ring__circle" r="52" cx="60" cy="60" />
+                </svg>
+                <div class="progress-text">0%</div>
+            </div>
+            <div class="oculto" id="Botonterminado">
+                <button class="botonTerminado">Terminar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="paso">
+        <h2>Paso a paso</h2>
+        <div class="contenido">
+            <div class="linea-vertical">
+                <div class="punto"></div>
+                <div class="linea"></div>
+            </div>
+
+            <div class="texto">
+                <h3>1. Elige una tarea que quieras realizar</h3>
+
+                <h3 class="primerTexto oculto" id="segundoTexto">2. Sigue el temporizador y trabaja en la tarea</h3>
+                <p class="oculto" id="TercerTexto">
+                    Evita cualquier distracción durante este tiempo, podrás continuar hasta que acabe el temporizador.
+                </p>
+
+                <div class="tiempo oculto" id="contenedor-timer-25">
+                    <div class="timer-container" id="minutos">
+                        <div class="timer">25:00</div>
+                        <div class="timer-buttons">
+                            <button class="timer-button" aria-label="Reiniciar temporizador">
+                                <img src="img/repetir.png" alt="Reiniciar" width="25px" height="25px">
+                            </button>
+                            <button class="timer-button" aria-label="Pausar temporizador">
+                                <img src="img/boton-de-pausa.png" alt="Pausar" width="25px" height="25px">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="tercerParrafo oculto" id="tercerTextoTextoDos">3. Toma un descanso corto</h3>
+                <p class="oculto" id="parafoTextoDos">
+                    Descansa 5 minutos, levántate, estírate o has algo que te relaje.
+                </p>
+
+                <div class="tiempo oculto" id="contenedor-timer-5">
+                    <div class="timer-container" id="minutosDos">
+                        <div class="timer">05:00</div>
+                        <div class="timer-buttons">
+                            <button class="timer-button" aria-label="Reiniciar temporizador">
+                                <img src="img/repetir.png" alt="Reiniciar" width="25px" height="25px">
+                            </button>
+                            <button class="timer-button" aria-label="Pausar temporizador">
+                                <img src="img/boton-de-pausa.png" alt="Pausar" width="25px" height="25px">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="BOTON" onclick="mostrarTexto()">Siguiente paso</button>
+    </div>
+
+    <script src="Js/timer.js"></script>
+    <script src="Js/pomodoro.js"></script>
+    <script src="Js/progress.js"></script>
+    <script src="Js/sdc.js"></script>
+    <script src="Js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+   
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: aliceblue;
+}
+
+.btn-atras {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.partedearriba{
+    background-color: brown;
+    text-align: center;
+    padding:20px;
+  
+}
+.sesion{
+    padding: 10px;
+}
+.imagen{
+    background-color: #ff0e0e;
+    border-radius: 50px;
+    width: 30%;
+    padding: 20px;
+    margin: 0 auto;
+}
+.paso h2{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+.paso{
+    padding-left: 30px;
+    position: relative;
+}
+
+/*Linea azul*/
+.contenido {
+    display: flex;
+    align-items: flex-start;
+}
+
+.linea-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    background-color: #007BFF;
+    border-radius: 50%;
+}
+
+.linea {
+    width: 2px;
+    height: 80px;
+    background-color: #007BFF;
+}
+/*Termina la linea*/
+
+/*TEXTOS*/
+.texto {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre párrafos */
+  }
+  
+.primerTexto {
+    display: block; /*Se encarga de que el navegador coja que todo el ancho y q tiene q estar en una nueva lioea*/
+    margin-top: 40px; /* Espacio entre el texto de arriba*/
+}
+  
+
+
+
+.BOTON {
+
+    margin-top: 40px;
+    padding: 10px;
+    text-align: center;
+    background-color: #007BFF;
+    color: aliceblue;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    font-size: 16px;
+}
+
+.tiempo{
+  
+    border-radius: 106px;
+    color: #121212;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    
+    padding: 10px;
+}
+.minutos {
+    font-size: 45px;
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    padding: 5px; 
+    background-color: #ffffff;
+}
+.pare {
+    
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    
+    background-color: #ffffff;
+    width:40px; 
+    height: 40px;
+}
+.repetir {
+    
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    
+}
+.tercerParrafo{
+    display: block;
+    display: flex;
+       
+}
+.botonTerminado{
+    font-size: 26px;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    background-color: #0690cf;
+    width: 400px; 
+    height: 45px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 45px; /* Para centrar verticalmente el texto */
+}
+
+.botonTerminado:hover{
+    background-color: #013c74;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* clases para ocultar y mostrar*/
+
+.visible{
+    display: block;
+    
+}
+.oculto {
+    display: none;
+  }

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../fonts/Inter/static/Inter_28pt-Regular.ttf);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.btn-atras {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 20px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.contenedor {
+  background: #171717;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+}
+
+.lista-eventos {
+  margin: 20px 0;
+}
+
+.evento {
+  background: #eaeaea;
+  color: #171717;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.evento h3 {
+  margin: 0 0 5px;
+}
+
+.evento button {
+  margin-right: 10px;
+  text-decoration: none;
+  padding: 5px 20px;
+  background-color: #FFA200;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  border-color: #FFA200;
+  transition: all 0.3s ease;
+}
+
+.evento button:hover{
+  background-color: #a16600;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-agregar {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #0690cf;
+  color: white;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-agregar:hover{
+    background-color: #013c74;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

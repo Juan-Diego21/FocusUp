@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="src\output.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encuesta - Focus Up</title>
+    <link rel="icon" href="img\Logo-marca.png" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-black min-h-screen flex items-center justify-center font-inter p-[20px]"
+  >
+    <div class="w-full max-w-md px-5">
+      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+        <!-- Logo -->
+        <img
+          src="img/Logo.png"
+          alt="Logo de Focus Up"
+          class="w-72 mx-auto pb-0"
+        />
+
+        <!-- Primer Pregunta -->
+        <div class="my-5">
+          <h1 class="text-left font-medium text-white text-[17px] mb-2">
+            ¿Cuál consideras que son tus 3 distracciones más comunes?
+          </h1>
+
+          <div class="relative w-full">
+            <select
+              name="options"
+              id="options"
+              class="w-full h-10 px-3 py-2 font-normal bg-white rounded-sm cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+            >
+              <option value="" disabled selected hidden class="text-gray-400">
+                Selecciona una distracción
+              </option>
+              <option value="option1">Redes sociales</option>
+              <option value="option2">Mensajería instantánea</option>
+              <option value="option3">Notificaciones del teléfono</option>
+              <option value="option4">Correo electrónico</option>
+              <option value="option5">Plataformas de video</option>
+              <option value="option6">Juegos móviles o en línea</option>
+              <option value="option7">Scroll infinito</option>
+              <option value="option8">Compras online</option>
+              <option value="option9">Ruidos externos</option>
+              <option value="option10">Interrupciones de otras personas</option>
+              <option value="option11">Hambre o sed</option>
+              <option value="option12">Falta de comodidad</option>
+              <option value="option13">
+                Desorden en el espacio de trabajo
+              </option>
+              <option value="option14">Mascotas</option>
+              <option value="option15">Pensamientos intrusivos</option>
+              <option value="option16">Sueño/fatiga</option>
+              <option value="option17">Aburrimiento</option>
+              <option value="option18">Multitarea</option>
+              <option value="option19">Día soñando despierto</option>
+              <option value="option20">Estrés o ansiedad</option>
+            </select>
+            <div
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+            >
+              <img src="./img/Lista.png" alt="" class="w-5 h-5" />
+            </div>
+          </div>
+        </div>
+
+        <div class="relative w-full my-5">
+          <select
+            name="options"
+            id="options"
+            class="w-full h-10 px-3 py-2 font-normal bg-white rounded-sm cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+          >
+            <option value="" disabled selected hidden class="text-gray-400">
+              Selecciona una distracción
+            </option>
+            <option value="option1">Redes sociales</option>
+            <option value="option2">Mensajería instantánea</option>
+            <option value="option3">Notificaciones del teléfono</option>
+            <option value="option4">Correo electrónico</option>
+            <option value="option5">Plataformas de video</option>
+            <option value="option6">Juegos móviles o en línea</option>
+            <option value="option7">Scroll infinito</option>
+            <option value="option8">Compras online</option>
+            <option value="option9">Ruidos externos</option>
+            <option value="option10">Interrupciones de otras personas</option>
+            <option value="option11">Hambre o sed</option>
+            <option value="option12">Falta de comodidad</option>
+            <option value="option13">Desorden en el espacio de trabajo</option>
+            <option value="option14">Mascotas</option>
+            <option value="option15">Pensamientos intrusivos</option>
+            <option value="option16">Sueño/fatiga</option>
+            <option value="option17">Aburrimiento</option>
+            <option value="option18">Multitarea</option>
+            <option value="option19">Día soñando despierto</option>
+            <option value="option20">Estrés o ansiedad</option>
+          </select>
+          <div
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+          >
+            <img src="./img/Lista.png" alt="" class="w-5 h-5" />
+          </div>
+        </div>
+
+        <div class="relative w-full">
+          <select
+            name="options"
+            id="options"
+            class="w-full h-10 px-3 py-2 font-normal bg-white rounded-sm cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+          >
+            <option value="" disabled selected hidden class="text-gray-400">
+              Selecciona una distracción
+            </option>
+            <option value="option1">Redes sociales</option>
+            <option value="option2">Mensajería instantánea</option>
+            <option value="option3">Notificaciones del teléfono</option>
+            <option value="option4">Correo electrónico</option>
+            <option value="option5">Plataformas de video</option>
+            <option value="option6">Juegos móviles o en línea</option>
+            <option value="option7">Scroll infinito</option>
+            <option value="option8">Compras online</option>
+            <option value="option9">Ruidos externos</option>
+            <option value="option10">Interrupciones de otras personas</option>
+            <option value="option11">Hambre o sed</option>
+            <option value="option12">Falta de comodidad</option>
+            <option value="option13">Desorden en el espacio de trabajo</option>
+            <option value="option14">Mascotas</option>
+            <option value="option15">Pensamientos intrusivos</option>
+            <option value="option16">Sueño/fatiga</option>
+            <option value="option17">Aburrimiento</option>
+            <option value="option18">Multitarea</option>
+            <option value="option19">Día soñando despierto</option>
+            <option value="option20">Estrés o ansiedad</option>
+          </select>
+          <div
+            class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+          >
+            <img src="./img/Lista.png" alt="" class="w-5 h-5" />
+          </div>
+        </div>
+
+        <!-- Segunda Pregunta -->
+        <div class="my-5">
+          <h1 class="text-left font-medium text-white text-[17px] mb-2">
+            ¿Cuál es tu objetivo principal al utilizar Focus Up?
+          </h1>
+
+          <div class="relative w-full">
+            <select
+              name="options"
+              id="options"
+              class="w-full h-10 px-3 py-2 font-normal bg-white rounded-sm cursor-pointer outline-none appearance-none border border-blue-500 focus:border-blue-600 transition-colors pr-8"
+            >
+              <option value="" disabled selected hidden class="text-gray-400">
+                Selecciona una opción
+              </option>
+              <option value="option1">Estudio y Aprendizaje</option>
+              <option value="option2">Trabajo y Productividad</option>
+              <option value="option3">
+                Tareas Domésticas y Organización Personal
+              </option>
+              <option value="option4">
+                Creatividad y Proyectos Personales
+              </option>
+              <option value="option5">Salud Mental y Bienestar</option>
+            </select>
+            <div
+              class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none"
+            >
+              <img src="./img/Lista.png" alt="" class="w-5 h-5" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón Registro -->
+        <button
+          type="button"
+          class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition cursor-pointer"
+          id="Boton_Terminar"
+        >
+          Terminar
+        </button>
+      </div>
+    </div>
+
+    <script src="Js\script.js"></script>
+  </body>
+</html>

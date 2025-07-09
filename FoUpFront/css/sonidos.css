@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../fonts/Inter/static/Inter_28pt-Regular.ttf);
+}
+
+body {
+  background-color: #171717;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-atras {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.album-header {
+  background-color: #2a2a2a;
+  width: 100%;
+}
+
+.album-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.album-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.album-title {
+  font-size: 5rem;
+  color: white;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.fondo-album {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.album-info {
+  color: #ccc;
+  margin-left: 25px;
+  font-size: 1rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.player-album-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  min-width: 200px;
+}
+
+#player-album-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.player-song-text {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-song-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+}
+
+.player-song-artist {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin: 0;
+}
