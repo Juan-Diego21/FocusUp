@@ -1,0 +1,549 @@
+@import 'variables.css';
+@import 'base.css';
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../fonts/Inter/static/Inter_28pt-Regular.ttf);
+}
+
+/* Estilos generales para toda la aplicación */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* Estilo del cuerpo de la página */
+body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #171717; /* Fondo oscuro */
+  position: relative;
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--bg-surface);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: var(--shadow-sm);
+  border-right: 1px solid var(--bg-surface-3);
+  transition: width var(--transition-normal), opacity var(--transition-normal);
+  overflow: hidden;
+}
+
+/* Perfil de usuario en la barra lateral */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--bg-surface-3);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Foto de usuario */
+.user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius-circle);
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+}
+
+/* Detalles del usuario */
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+/* Nombre de usuario */
+.username {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+/* ID de usuario */
+.user-id {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Menú de configuración */
+.settings-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Elementos del menú */
+.settings-menu li {
+  padding: var(--spacing-sm) 0;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  position: relative;
+}
+
+/* Efecto hover en elementos del menú */
+.settings-menu li:hover {
+  color: var(--color-primary);
+  padding-left: var(--spacing-sm);
+}
+
+/* Iconos en el menú */
+.settings-menu li i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Botón de cerrar sesión */
+.logout-btn {
+  background-color: #0690cf;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: auto;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Efecto hover en botón de cerrar sesión */
+.logout-btn:hover {
+  background-color: #013c74;
+}
+
+/* Icono dentro del botón */
+.logout-btn i {
+  margin-right: 8px;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  min-height: 100vh;
+  background-color: #171717;
+  color: white;
+  transition: margin-left var(--transition-normal), width var(--transition-normal);
+}
+
+/* Contenedor superior */
+.top-container {
+  background-color: var(--bg-surface);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--bg-surface-3);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Estilo para párrafos */
+p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilo para el id "avance" */
+#avance {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+/* Contenedor de progreso */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Círculo de progreso */
+.progress-circle {
+  position: relative;
+  width: 350px;
+  height: 0px;
+  margin: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring__circle-bg {
+  position: absolute;
+  fill: none;
+  stroke: var(--bg-surface-3);
+  stroke-width: 15;
+  width: 350px;
+  height: 350px;
+}
+
+.progress-ring__circle {
+  position: absolute;
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 0;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  width: 350px;
+  height: 350px;
+}
+
+.progress-text {
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  z-index: 1;
+}
+
+/* Botón para iniciar sesión de concentración */
+.concentration-btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: var(--color-primary);
+  color: var(--text-primary);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.concentration-btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Contenido inferior con grid */
+.bottom-content {
+  padding: var(--spacing-sm);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  max-width: var(--content-max-width);
+  margin: var(--spacing-sm) auto;
+}
+
+/* Contenedores de sesiones */
+.sessions-container {
+  background-color: var(--bg-surface);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.sessions-container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Mensajes de sesiones */
+.sessions-message {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Botones de programación */
+.schedule-btn,
+.sound-btn,
+.metod-btn {
+  background-color: var(--color-secondary);
+  color: var(--text-primary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  width: 100%;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-btn:hover,
+.sound-btn:hover,
+.metod-btn:hover {
+  background-color: var(--color-secondary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive para pantallas medianas */
+@media (max-width: 1200px) {
+  .bottom-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: var(--sidebar-width-collapsed);
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+
+  .user-details,
+  .settings-menu li span {
+    display: none;
+  }
+
+  .settings-menu li {
+    justify-content: center;
+  }
+
+  .main-content {
+    margin-left: var(--sidebar-width-collapsed);
+    width: calc(100% - var(--sidebar-width-collapsed));
+  }
+
+  .bottom-content {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-md);
+  }
+}
+
+/* Estado cuando la barra lateral está oculta */
+.sidebar.sidebar-hidden {
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Contenido principal expandido cuando la barra lateral está oculta */
+.sidebar.sidebar-hidden ~ .main-content {
+  margin-left: 0;
+  width: 100%;
+}
+
+/* Estilo para el botón de despliegue de la barra lateral */
+.sidebar-toggle-btn {
+  position: fixed;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  padding: var(--spacing-xs);
+  z-index: 1000;
+  transition: all var(--transition-normal);
+  background: var(--bg-surface);
+  border-radius: var(--border-radius-circle);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Imagen dentro del botón de despliegue */
+.sidebar-toggle-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-toggle-btn:hover {
+  background: var(--bg-surface-2);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+/* Estilos para la notificación */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1E1E1E;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.notification button {
+    background-color: #0690cf;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.notification button:hover {
+    background-color: #057db3;
+}
+
+/* Botón de despliegue */
+.dropdown-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-btn img {
+    width: 16px;
+    height: 16px;
+}
+
+.dropdown-btn.active {
+    transform: rotate(270deg);
+}
+
+/* Menú desplegable */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    padding: var(--spacing-xs) 0;
+    margin-top: 0;
+    z-index: 10;
+}
+
+.submenu.active {
+    display: block;
+}
+
+.submenu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    color: #ff4444;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.submenu-item:hover {
+    opacity: 0.8;
+}
+
+.submenu-item img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Ajuste específico para el elemento de configuración de cuenta */
+.settings-menu li:has(.dropdown-btn) {
+    justify-content: space-between;
+}
+
+/* Modal de confirmación */
+.modal-confirm {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-confirm.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #1E1E1E;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content p {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-cancel {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-confirm {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover,
+.btn-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

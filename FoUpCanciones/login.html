@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus Up - Inicio de Sesión</title>
+    <link rel="icon" href="img/Logo-marca.png" />
+    <link rel="stylesheet" href="src\output.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#0690cf",
+              secundary: "#026b9b",
+              dark: "#171717",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-black min-h-screen flex items-center justify-center font-inter"
+  >
+    <!-- Contenedor principal del login -->
+    <div class="w-full max-w-md px-5">
+      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+        <!-- Logo de la aplicación -->
+        <img
+          src="img/Logo.png"
+          alt="Logo de Focus Up"
+          class="w-72 mx-auto pb-10"
+        />
+
+        <!-- Formulario de inicio de sesión -->
+        <form
+          class="space-y-5"
+          aria-label="Formulario de inicio de sesión"
+          id="login-form"
+        >
+          <!-- Campo para correo electrónico -->
+          <div>
+            <input
+              type="email"
+              placeholder="Correo electrónico"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 bg-white"
+              required
+              aria-required="true"
+              aria-label="Correo electrónico"
+            />
+          </div>
+
+          <!-- Campo para contraseña -->
+          <div>
+            <input
+              type="password"
+              placeholder="Contraseña"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 bg-white"
+              required
+              aria-required="true"
+              aria-label="Contraseña"
+            />
+          </div>
+
+          <!-- Botón para enviar el formulario -->
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition cursor-pointer"
+          >
+            Iniciar Sesión
+          </button>
+
+          <!-- Separador visual -->
+          <div class="relative flex items-center justify-center text-gray-400">
+            <div class="flex-grow border-t border-gray-300"></div>
+            <span class="mx-4">o</span>
+            <div class="flex-grow border-t border-gray-300"></div>
+          </div>
+
+          <!-- Botón para continuar con Google -->
+          <button
+            type="button"
+            class="w-full bg-white text-gray-800 py-3 rounded-lg font-medium border border-gray-300 flex items-center justify-center gap-2 hover:bg-gray-300 transition cursor-pointer"
+            aria-label="Continuar con Google"
+          >
+            <img src="img/google.png" alt="Logo de Google" class="w-5" />
+            Continuar con Google
+          </button>
+
+          <!-- Enlaces para registrarse y recuperar contraseña -->
+          <div class="flex justify-around mt-5">
+            <a href="register.html" class="text-white text-sm transition"
+              >Registrarse</a
+            >
+            <a href="forgot.html" class="text-white text-sm transition"
+              >¿Olvidaste tu contraseña?</a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Inclusión del archivo JavaScript para manejar interacciones -->
+    <script src="Js/script.js"></script>
+  </body>
+</html>

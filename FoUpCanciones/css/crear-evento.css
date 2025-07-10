@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url(../fonts/Inter/static/Inter_28pt-Regular.ttf);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.btn-atras {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 20px;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.contenedor {
+  background: #171717;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #e0e0e0;
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.botones-extra {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.botones-extra button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #0690cf;
+  color: white;
+  cursor: pointer;
+}
+
+#btn-añadir-mde{
+  transition: all 0.3s ease;
+}
+
+#btn-añadir-s{
+  transition: all 0.3s ease;
+}
+
+.btn-guardar {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #0690cf;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-guardar:hover{
+  background: #03588F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#btn-añadir-s:hover{
+  background: #03588F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#btn-añadir-mde:hover{
+  background: #03588F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

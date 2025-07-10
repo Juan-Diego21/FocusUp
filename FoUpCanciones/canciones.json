@@ -1,0 +1,41 @@
+{
+  "lofi": [
+    { "archivo": "Tema 1.mp3", "titulo": "Tema 1", "artista": "None" },
+    { "archivo": "Tema 2.m4a", "titulo": "Tema 2", "artista": "None" },
+    { "archivo": "Tema 3.mp3", "titulo": "Tema 3", "artista": "None" },
+    { "archivo": "Tema 4.mp3", "titulo": "Tema 4", "artista": "None" },
+    { "archivo": "Tema 5.m4a", "titulo": "Tema 5", "artista": "None" },
+    { "archivo": "Tema 6.mp3", "titulo": "Tema 6", "artista": "None" },
+    { "archivo": "Tema 7.m4a", "titulo": "Tema 7", "artista": "None" },
+    { "archivo": "Tema 8.m4a", "titulo": "Tema 8", "artista": "None" },
+    { "archivo": "Tema 9.mp3", "titulo": "Tema 9", "artista": "None" },
+    { "archivo": "Tema 10.mp3", "titulo": "Tema 10", "artista": "None" }
+  ],
+  "naturaleza": [
+    { "archivo": "Aves.m4a", "titulo": "Aves", "artista": "None" },
+    { "archivo": "Bosque.mp3", "titulo": "Bosque", "artista": "None" },
+    { "archivo": "Cascada.m4a", "titulo": "Cascada", "artista": "None" },
+    { "archivo": "Fogata.m4a", "titulo": "Fogata", "artista": "None" },
+    { "archivo": "Jungla.m4a", "titulo": "Jungla", "artista": "None" },
+    {
+      "archivo": "Lluvia y truenos.m4a",
+      "titulo": "Lluvia y truenos",
+      "artista": "None"
+    },
+    { "archivo": "Mar.m4a", "titulo": "Mar", "artista": "None" },
+    { "archivo": "Rocas.m4a", "titulo": "Rocas", "artista": "None" },
+    { "archivo": "Viento.m4a", "titulo": "Viento", "artista": "None" }
+  ],
+  "relajantes": [
+    { "archivo": "Tema 1.m4a", "titulo": "Tema 1", "artista": "None" },
+    { "archivo": "Tema 2.m4a", "titulo": "Tema 2", "artista": "None" },
+    { "archivo": "Tema 3.m4a", "titulo": "Tema 3", "artista": "None" },
+    { "archivo": "Tema 4.mp3", "titulo": "Tema 4", "artista": "None" },
+    { "archivo": "Tema 5.m4a", "titulo": "Tema 5", "artista": "None" },
+    { "archivo": "Tema 6.m4a", "titulo": "Tema 6", "artista": "None" },
+    { "archivo": "Tema 7.mp3", "titulo": "Tema 7", "artista": "None" },
+    { "archivo": "Tema 8.m4a", "titulo": "Tema 8", "artista": "None" },
+    { "archivo": "Tema 9.mp3", "titulo": "Tema 9", "artista": "None" },
+    { "archivo": "Tema 10.m4a", "titulo": "Tema 10", "artista": "None" }
+  ]
+}

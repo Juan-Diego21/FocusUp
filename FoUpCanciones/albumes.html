@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Álbumes</title>
+    <link rel="stylesheet" href="css/albumes.css" />
+    <link rel="icon" href="img\Logo-marca.png" />
+  </head>
+  <body>
+    <a href="index.html">
+      <img src="img/Back.png" alt="Volver atrás" class="btn-atras" />
+    </a>
+
+    <main class="albumes-container">
+      <h1>Álbumes</h1>
+      <section class="album-list">
+        <article class="album clickable-album" data-album="lofi">
+          <img src="img/fondo-album.png" alt="Calm" class="album-image" />
+          <h2 class="album-title">Album lofi</h2>
+          <p class="album-description">
+            Este álbum te ofrece el ambiente perfecto con sus ritmos relajados y
+            sonidos cálidos, ideal para concentrarte, estudiar o simplemente
+            relajarte después de un largo día.
+          </p>
+          <button class="concentration-btn btn-add-album">
+            Añadir álbum a métodos de estudio
+          </button>
+        </article>
+        <article class="album clickable-album" data-album="naturaleza">
+          <img src="img/fondo-album.png" alt="Álbum 2" class="album-image" />
+          <h2 class="album-title">Álbum Naturaleza</h2>
+          <p class="album-description">
+            Un álbum que te transporta directamente a la calma del bosque con
+            lluvia suave, cantos de pájaros y susurros del viento. Perfecto para
+            meditar, dormir o encontrar tu paz interior.
+          </p>
+          <button class="concentration-btn btn-add-album">
+            Añadir álbum a métodos de estudio
+          </button>
+        </article>
+        <article class="album clickable-album" data-album="relajantes">
+          <img src="img/fondo-album.png" alt="Álbum 3" class="album-image" />
+          <h2 class="album-title">Álbum Relajante</h2>
+          <p class="album-description">
+            Este álbum es tu escape a la serenidad, con armonías suaves y
+            melodías pacíficas diseñadas para reducir el estrés, facilitar la
+            meditación y promover un descanso reparador.
+          </p>
+          <button class="concentration-btn btn-add-album">
+            Añadir álbum a métodos de estudio
+          </button>
+        </article>
+      </section>
+    </main>
+
+    <!-- Modal backdrop -->
+    <div id="modal-backdrop" class="modal-backdrop hidden"></div>
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="modal hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-content">
+        <h3 id="modal-title">Eventos guardados</h3>
+        <div id="event-list" class="event-list"></div>
+        <div id="no-events" class="no-events hidden">
+          <p>No tienes eventos de sesiones de concentración guardados.</p>
+          <button
+            id="create-event-btn"
+            class="concentration-btn btn-create-event"
+          >
+            Crear evento
+          </button>
+        </div>
+        <button
+          id="close-modal"
+          class="btn-close-modal"
+          aria-label="Cerrar modal"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <script src="Js/interacciones-mod.js"></script>
+  </body>
+</html>
