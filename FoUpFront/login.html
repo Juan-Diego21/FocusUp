@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focus Up - Inicio de Sesión</title>
     <link rel="icon" href="img/Logo-marca.png" />
-    <link rel="stylesheet" href="src\output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -14,8 +14,6 @@
               inter: ["Inter", "sans-serif"],
             },
             colors: {
-              primary: "#0690cf",
-              secundary: "#026b9b",
               dark: "#171717",
             },
           },
@@ -24,11 +22,11 @@
     </script>
   </head>
   <body
-    class="bg-black min-h-screen flex items-center justify-center font-inter"
+    class="bg-[#171717] min-h-screen flex items-center justify-center font-inter"
   >
     <!-- Contenedor principal del login -->
     <div class="w-full max-w-md px-5">
-      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+      <div class="bg-[#232323] p-8 rounded-xl shadow-lg text-center">
         <!-- Logo de la aplicación -->
         <img
           src="img/Logo.png"
@@ -67,12 +65,12 @@
           </div>
 
           <!-- Botón para enviar el formulario -->
-          <button
-            type="submit"
-            class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition cursor-pointer"
+          <a
+            href="index.html"
+            class="w-full bg-[#0690cf] hover:bg-[#068fcf9a] text-white py-3 rounded-lg font-medium transition cursor-pointer flex items-center justify-center"
           >
             Iniciar Sesión
-          </button>
+          </a>
 
           <!-- Separador visual -->
           <div class="relative flex items-center justify-center text-gray-400">
@@ -92,11 +90,15 @@
           </button>
 
           <!-- Enlaces para registrarse y recuperar contraseña -->
-          <div class="flex justify-around mt-5">
-            <a href="register.html" class="text-white text-sm transition"
+          <div class="flex justify-between mt-5">
+            <a
+              href="register.html"
+              class="text-[#0690cf] hover:text-white text-sm transition"
               >Registrarse</a
             >
-            <a href="forgot.html" class="text-white text-sm transition"
+            <a
+              href="forgot.html"
+              class="text-[#0690cf] hover:text-white text-sm transition"
               >¿Olvidaste tu contraseña?</a
             >
           </div>

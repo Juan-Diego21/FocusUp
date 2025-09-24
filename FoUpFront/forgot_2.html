@@ -4,47 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focus Up - Verificación de Código</title>
-    <!-- Enlace a la hoja de estilos específica para la página de verificación -->
-    <link rel="stylesheet" href="css/forgot_2.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              fondo: "#171717",
+              azul: "#0690cf",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body>
+  <body
+    class="bg-fondo min-h-screen flex items-center justify-center font-inter relative"
+  >
     <img
       src="img/Back.png"
       alt=""
-      class="btn-atras"
+      class="absolute w-[25px] h-[25px] top-[10px] left-[10px] mt-[20px] ml-[20px] cursor-pointer"
       onclick="window.history.back();"
     />
 
-    <!-- Contenedor principal centrado en la pantalla -->
-    <div class="login-container">
-      <div class="login-box">
-        <!-- Logo de la aplicación -->
-        <img src="img/Logo.png" alt="Logo de Focus Up" class="logo" />
+    <div class="w-full max-w-[480px] p-5">
+      <div class="bg-[#232323] p-8 rounded-[15px] shadow-lg text-center">
+        <img
+          src="img/Logo.png"
+          alt="Logo de Focus Up"
+          class="w-[300px] mx-auto pb-10"
+        />
 
-        <!-- Formulario para ingresar código de verificación -->
         <form
           class="login-form"
           aria-label="Formulario de verificación de código"
         >
-          <!-- Instrucción para el usuario -->
-          <p>
+          <p class="text-white mx-2 mb-10 text-center">
             Hemos enviado un código de verificación a tu correo para poder
             restablecer tu contraseña
           </p>
 
-          <!-- Contenedor de inputs para el código de 5 dígitos -->
           <div
-            class="code-container"
+            class="flex justify-center gap-2 mb-8"
             role="group"
             aria-label="Código de verificación de 5 dígitos"
           >
-            <!-- Cada input acepta un solo dígito numérico y auto-focaliza el siguiente al completar -->
             <input
               type="text"
               maxlength="1"
               pattern="[0-9]"
               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
-              class="code-input"
+              class="w-[50px] h-[50px] text-center text-2xl border-2 border-azul rounded-lg bg-[#232323] text-white mb-5 focus:outline-none focus:border-white"
               required
               aria-label="Dígito 1"
             />
@@ -53,7 +67,7 @@
               maxlength="1"
               pattern="[0-9]"
               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
-              class="code-input"
+              class="w-[50px] h-[50px] text-center text-2xl border-2 border-azul rounded-lg bg-[#232323] text-white mb-5 focus:outline-none focus:border-white"
               required
               aria-label="Dígito 2"
             />
@@ -62,7 +76,7 @@
               maxlength="1"
               pattern="[0-9]"
               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
-              class="code-input"
+              class="w-[50px] h-[50px] text-center text-2xl border-2 border-azul rounded-lg bg-[#232323] text-white mb-5 focus:outline-none focus:border-white"
               required
               aria-label="Dígito 3"
             />
@@ -71,7 +85,7 @@
               maxlength="1"
               pattern="[0-9]"
               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
-              class="code-input"
+              class="w-[50px] h-[50px] text-center text-2xl border-2 border-azul rounded-lg bg-[#232323] text-white mb-5 focus:outline-none focus:border-white"
               required
               aria-label="Dígito 4"
             />
@@ -80,18 +94,21 @@
               maxlength="1"
               pattern="[0-9]"
               oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 1); if(this.value.length == 1) this.nextElementSibling?.focus()"
-              class="code-input"
+              class="w-[50px] h-[50px] text-center text-2xl border-2 border-azul rounded-lg bg-[#232323] text-white mb-5 focus:outline-none focus:border-white"
               required
               aria-label="Dígito 5"
             />
           </div>
 
-          <!-- Botón para enviar el formulario -->
-          <button type="submit" class="continue-btn">Continuar</button>
+          <a
+            href="forgot_3.html"
+            class="block w-full py-4 bg-azul text-white rounded-lg text-base font-semibold cursor-pointer mb-5 hover:bg-[#068fcf9a] transition-colors text-center"
+          >
+            Continuar
+          </a>
         </form>
       </div>
     </div>
-    <!-- Inclusión del archivo JavaScript para manejar interacciones -->
-    <script src="Js\script.js"></script>
+    <script src="Js/script.js"></script>
   </body>
 </html>

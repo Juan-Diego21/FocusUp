@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro - Focus Up</title>
-    <link href="src\output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -23,7 +23,7 @@
     </script>
   </head>
   <body
-    class="bg-black min-h-screen flex items-center justify-center font-inter p-[20px]"
+    class="bg-[#171717] min-h-screen flex items-center justify-center font-inter p-[20px]"
   >
     <img
       src="img/Back.png"
@@ -32,7 +32,7 @@
       onclick="window.history.back();"
     />
     <div class="w-full max-w-md px-5">
-      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+      <div class="bg-[#232323] p-8 rounded-xl shadow-lg text-center">
         <!-- Logo -->
         <img
           src="img/Logo.png"
@@ -92,13 +92,13 @@
           </div>
 
           <!-- Botón Registro -->
-          <button
-            type="submit"
-            class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition cursor-pointer"
+          <a
+            href="register_2.html"
+            class="w-full bg-[#0690cf] text-white py-3 rounded-lg font-medium hover:bg-[#068fcf9a] transition cursor-pointer text-center block"
             id="Boton_Registrarse"
           >
             Registrarse
-          </button>
+          </a>
 
           <!-- Separador -->
           <div class="relative flex items-center justify-center text-gray-400">

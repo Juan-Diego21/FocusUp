@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focus Up - Recuperar Contraseña</title>
     <link rel="icon" href="img/Logo-marca.png" />
-    <link href="src/output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="bg-black min-h-screen flex items-center justify-center p-5">
+  <body class="bg-[#171717] min-h-screen flex items-center justify-center p-5">
     <!-- Botón Atrás -->
     <img
       src="img/Back.png"
@@ -22,7 +22,7 @@
 
     <!-- Contenedor Principal -->
     <div class="w-full max-w-md px-5">
-      <div class="bg-[#171717] p-8 rounded-xl shadow-lg text-center">
+      <div class="bg-[#232323] p-8 rounded-xl shadow-lg text-center">
         <!-- Logo -->
         <img
           src="img/Logo.png"
@@ -36,7 +36,7 @@
           aria-label="Formulario de recuperación de contraseña"
         >
           <!-- Instrucción -->
-          <p class="text-white text-center mb-10 text-[18px] font-medium">
+          <p class="text-[#fffffff3] text-center mb-10 text-[18px] font-medium">
             Ingresa el correo electrónico asociado a tu cuenta
           </p>
 
@@ -53,13 +53,13 @@
           </div>
 
           <!-- Botón Continuar -->
-          <button
-            type="submit"
-            class="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors cursor-pointer"
+          <a
+            href="forgot_2.html"
+            class="block w-full bg-[#0690cf] text-white py-3 rounded-lg font-medium hover:bg-[#068fcf9a] transition-colors text-center cursor-pointer"
             id="continue_button"
           >
             Continuar
-          </button>
+          </a>
         </form>
       </div>
     </div>

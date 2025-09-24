@@ -6,6 +6,18 @@
     <title>Focus Up</title>
     <link rel="icon" href="img/Logo-marca.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              btn: "#0690cf",
+              btnhover: "#068fcf9a",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body class="bg-[#171717] min-h-screen">
     <button
@@ -14,10 +26,9 @@
     >
       <img src="img/ui_menu.png" alt="Toggle Menu" class="w-6 h-6" />
     </button>
-    <!-- Barra lateral -->
     <aside
       id="sidebar"
-      class="fixed top-0 left-0 h-full w-64 bg-[#171717] shadow-lg flex flex-col p-6 z-40 border-r-2 border-white transition-transform -translate-x-full"
+      class="fixed top-0 left-0 h-full w-64 bg-[#171717] shadow-lg flex flex-col p-6 z-40 border rounded-lg border-[#313131] transition-transform -translate-x-full"
     >
       <div class="flex flex-col items-center mb-8">
         <img
@@ -35,36 +46,36 @@
           <li>
             <a
               href=""
-              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+              class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#313131] transition text-white"
             >
               <i class="icon"></i> Inicio
             </a>
           </li>
           <li>
             <div
-              class="flex items-center justify-between px-3 py-2 rounded hover:bg-[#313131] transition cursor-pointer group text-white"
+              class="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-[#313131] transition cursor-pointer group text-white"
             >
               <div class="flex items-center gap-2">
                 <i class="icon"></i> Configuración de cuenta
               </div>
               <button
-                class="dropdown-btn group-hover:-rotate-90 transition-transform"
+                class="dropdown-btn group-hover:-rotate-90 transition-transform rounded-lg"
                 type="button"
               >
                 <img src="img/Back.png" alt="Desplegar" class="w-4 h-4" />
               </button>
             </div>
-            <div id="submenu" class="ml-8 mt-2 space-y-1 hidden">
+            <div id="submenu" class="ml-8 mt-2 space-y-1 hidden rounded-lg">
               <a
                 href="ajustes_perfil.html"
-                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-[#313131] cursor-pointer"
+                class="flex items-center gap-2 px-2 py-1 rounded-lg hover:bg-[#313131] cursor-pointer"
                 id="editarPerfil"
               >
                 <img src="img/editar.png" alt="Editar" class="w-5 h-5" />
                 <span class="text-white text-sm">Editar perfil</span>
               </a>
               <a
-                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-[#313131] cursor-pointer"
+                class="flex items-center gap-2 px-2 py-1 rounded-lg hover:bg-[#313131] cursor-pointer"
                 id="eliminarCuenta"
               >
                 <img src="img/borrar.png" alt="Eliminar" class="w-5 h-5" />
@@ -75,7 +86,7 @@
           <li>
             <a
               href=""
-              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+              class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#313131] transition text-white"
             >
               <i class="icon"></i> Preferencias
             </a>
@@ -83,15 +94,15 @@
           <li>
             <a
               href=""
-              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+              class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#313131] transition text-white"
             >
               <i class="icon"></i> Notificaciones
             </a>
           </li>
           <li>
             <a
-              href=""
-              class="flex items-center gap-2 px-3 py-2 rounded hover:bg-[#313131] transition text-white"
+              href="C:\Users\juand\OneDrive\Documents\Actividades Sena\9. Proyecto\4. Cuarto Trimestre\Página\FoUpFront\reportes.html"
+              class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-[#313131] transition text-white"
             >
               <i class="icon"></i> Reportes
             </a>
@@ -100,13 +111,12 @@
       </nav>
       <a
         href="login.html"
-        class="mt-8 flex items-center gap-2 px-3 py-2 rounded bg-red-600 text-white hover:bg-red-700 transition"
+        class="mt-8 flex items-center gap-2 px-3 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition"
       >
         <i class="icon"></i> Cerrar Sesión
       </a>
     </aside>
 
-    <!-- Modal de confirmación -->
     <div
       id="modalConfirm"
       class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50 hidden"
@@ -118,13 +128,13 @@
         </p>
         <div class="flex justify-end gap-3">
           <button
-            class="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 text-gray-700"
+            class="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 text-gray-700"
             id="btnCancel"
           >
             No
           </button>
           <button
-            class="px-4 py-2 rounded bg-red-600 hover:bg-red-700 text-white"
+            class="px-4 py-2 rounded-lg bg-btn hover:bg-btnhover text-white"
             id="btnConfirm"
           >
             Estoy seguro
@@ -133,94 +143,119 @@
       </div>
     </div>
 
-    <!-- Contenido principal -->
     <main
       id="mainContent"
       class="flex justify-center items-center min-h-screen p-6 transition-all"
     >
-      <div class="max-w-4xl w-full">
-        <div class="mb-8">
+      <div class="max-w-4xl w-full rounded-lg">
+        <div class="mb-8 rounded-lg">
           <div
             class="bg-[#313131] rounded-lg shadow p-8 flex flex-col items-center"
           >
-            <p id="avance" class="font-semibold mb-2 text-[#F4EFFA]">
+            <p
+              id="avance"
+              class="font-semibold mb-2 text-[#fffffff3] text-[25px] rounded-lg"
+            >
               Avance del proceso
             </p>
-            <div class="mb-2">
-              <svg class="progress-ring" width="120" height="120">
+            <div
+              class="relative flex items-center justify-center mb-4 rounded-lg"
+              style="width: 120px; height: 120px"
+            >
+              <svg
+                class="progress-ring absolute top-0 left-0 rounded-lg"
+                width="120"
+                height="120"
+              >
                 <circle
-                  class="progress-ring__circle-bg"
+                  class="progress-ring__circle-bg rounded-lg"
                   r="52"
                   cx="60"
                   cy="60"
                   fill="none"
-                  stroke="#e5e7eb"
+                  stroke="#FFFFFF80"
                   stroke-width="8"
                 />
                 <circle
-                  class="progress-ring__circle"
+                  class="progress-ring__circle rounded-lg"
                   r="52"
                   cx="60"
                   cy="60"
                   fill="none"
-                  stroke="#3b82f6"
+                  stroke="#FFFFFF80"
                   stroke-width="8"
                   stroke-dasharray="326.72"
                   stroke-dashoffset="326.72"
                 />
               </svg>
+              <div
+                class="progress-text absolute inset-0 flex items-center justify-center text-2xl font-bold text-[#dfdfdf] rounded-lg"
+              >
+                0%
+              </div>
             </div>
-            <div class="progress-text text-2xl font-bold mb-4 text-[#F4EFFA]">
-              0%
+            <div class="w-full flex justify-center rounded-lg">
+              <a
+                href="sdc.html"
+                class="concentration-btn px-6 py-2 bg-btn text-[#F4EFFA] text-lg font-semibold rounded-lg hover:bg-btnhover transition"
+              >
+                Empezar sesión de concentración
+              </a>
             </div>
-            <a
-              href="sdc.html"
-              class="concentration-btn px-6 py-2 bg-blue-600 text-[#F4EFFA] text-lg font-semibold rounded hover:bg-blue-700 transition"
-            >
-              Empezar sesión de concentración
-            </a>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 rounded-lg">
           <div
-            class="bg-[#313131] rounded-lg shadow p-6 flex flex-col items-center"
+            class="bg-[#313131] rounded-lg shadow p-6 flex flex-col items-center justify-between"
           >
-            <div class="sessions-message text-center mb-4 text-[#F4EFFA]">
+            <div
+              class="sessions-message text-center mb-4 text-[#fcfcfc7e] text-lg flex-grow flex items-center rounded-lg"
+            >
               No tienes sesiones de concentración programadas
             </div>
-            <a
-              href="eventos.html"
-              id="scheduleSession"
-              class="schedule-btn px-4 py-2 bg-blue-600 text-[#F4EFFA] text-base font-semibold rounded hover:bg-blue-700 transition text-center"
-            >
-              Programar sesión de concentración
-            </a>
+            <div class="w-full flex justify-center rounded-lg">
+              <a
+                href="eventos.html"
+                id="scheduleSession"
+                class="schedule-btn px-4 py-2 bg-[#ffa200] text-white text-base font-semibold rounded-lg hover:bg-[#ffa200cb] transition text-center w-full"
+              >
+                Programar sesión de concentración
+              </a>
+            </div>
           </div>
           <div
-            class="bg-[#313131] rounded-lg shadow p-6 flex flex-col items-center"
+            class="bg-[#313131] rounded-lg shadow p-6 flex flex-col items-center justify-between"
           >
-            <div class="sessions-message text-center mb-4 text-[#F4EFFA]">
+            <div
+              class="sessions-message text-center mb-5 text-[#fcfcfc7e] text-lg flex-grow flex items-center rounded-lg"
+            >
               No tienes sonidos guardados
             </div>
-            <a
-              href="sonidos.html"
-              class="sound-btn px-4 py-2 bg-blue-600 text-[#F4EFFA] text-base font-semibold rounded hover:bg-blue-700 transition"
-            >
-              Explorar sonidos
-            </a>
+            <div class="w-full flex justify-center rounded-lg">
+              <a
+                href="sonidos.html"
+                class="schedule-btn px-4 py-5 bg-[#ffa200] text-white text-base font-semibold rounded-lg hover:bg-[#ffa200cb] transition text-center w-full"
+              >
+                Explorar sonidos
+              </a>
+            </div>
           </div>
           <div
-            class="bg-[#313131] rounded-lg shadow p-6 flex flex-col items-center"
+            class="bg-[#313131] rounded-lg shadow p-6 flex flex-col items-center justify-between"
           >
-            <div class="sessions-message text-center mb-4 text-[#F4EFFA]">
+            <div
+              class="sessions-message text-center mb-4 text-[#fcfcfc7e] text-lg flex-grow flex items-center rounded-lg"
+            >
               No tienes métodos de estudio guardados
             </div>
-            <a
-              href="Metodos Biblioteca.html"
-              class="metod-btn px-4 py-2 bg-blue-600 text-[#F4EFFA] text-base font-semibold rounded hover:bg-blue-700 transition"
-            >
-              Explorar métodos de estudio
-            </a>
+            <div class="w-full flex justify-center rounded-lg">
+              <a
+                href="Metodos Biblioteca.html"
+                class="schedule-btn px-4 py-2 bg-[#ffa200] text-white text-base font-semibold rounded-lg hover:bg-[#ffa200cb] transition text-center w-full"
+              >
+                Explorar métodos de estudio
+              </a>
+            </div>
           </div>
         </div>
       </div>
